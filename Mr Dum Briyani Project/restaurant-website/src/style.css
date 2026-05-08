@@ -17,7 +17,7 @@ body {
   margin: 0;
   padding: 0;
   font-family: 'Montserrat', sans-serif;
-  font-size: 15px;
+  font-size: 10px;
   line-height: 1.5;
 }
 
@@ -49,12 +49,19 @@ body {
   background: #16a083;
   outline: none;
   border: none;
+  white-space: nowrap;
 
 }
 
 .btn-primary:hover {
   background: #117964;
   transition: background 0.3s ease-in-out;
+}
+
+.home-btn{
+  padding: 10px 30px;
+  font-size: 1rem;
+  margin-bottom: 65px;
 }
 
 /* ............/navbar/............ *
@@ -69,18 +76,18 @@ body {
 .navbar {
   box-shadow: 0px 5px 10px 0px #aaa;
   position: fixed;
-  width: 100%;
+  width: 104%;
   background: #fff;
   color: #000;
   opacity: 1;
-  height: 100px;
+  height: 95px;
   z-index: 12;
 }
 
 .navbar-container {
   display: flex;
   justify-content: space-between;
-  height: 64px;
+  height: 95px;
   align-items: center;
 }
 
@@ -111,10 +118,9 @@ body {
 }
 
 .logo img {
+  order: 1;
   width: 34%;
-  object-fit: contain;
-  top: auto;
-  margin-top: 40px;
+  margin-bottom: auto;
 }
 
 /* ............//// Showcase styling ////......... */
@@ -127,13 +133,16 @@ body {
   text-align: center;
   padding: 2rem;
   color: #fff
+  height: 100vh;
+  flex: 1;
+  height: 100%;
 }
 
 
 .showcase-container video {
   padding: 0.4rem;
   padding-bottom: 0.4rem;
-  padding-top: 5rem;
+  padding-top: 9rem;
   border:none;
   width: 850px;
   max-width: 100%;
@@ -157,6 +166,8 @@ body {
 .about-wrapper {
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
 }
 
 #about h2 {
@@ -174,12 +185,12 @@ body {
   font-weight: 600;
 }
 
-.about-img {
-  flex: 1 1 400px;
-  padding: 50px;
-  width: 300%;
-  transform: translateX(150%);
-  animation: about-img-animation 1s ease-in-out forwards;
+.about-img img {
+  display: block;
+  margin: 0 auto;              /* 🔥 hard center */
+  width: 100%;
+  max-width: 500px;
+  height: auto;
 }
 
 @keyframes about-img-animation {
@@ -192,6 +203,7 @@ body {
   flex: 1 1 400px;
   padding: 30px;
   margin: auto;
+  text-align: left;
   transform: translate(-150%);
   animation: about-text-animation 1s ease-in-out forwards;
 }
@@ -202,13 +214,16 @@ body {
   }
 }
 
-.about-img img {
-  display: block;
-  height: 400px;
-  max-width: 100%;
-  margin: auto;
-  object-fit: cover;
-  object-position: right;
+.about-img {
+  flex: 1 1 50%;
+  padding: 20px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  transform: none !important;   /* 🔥 force remove animation shift */
+  width: 100% !important;       /* 🔥 remove 300% problem */
 }
 
 /* ..........////Food category///........... */
@@ -259,7 +274,7 @@ body {
 
 .img-content h3 {
   color: #fff;
-  font-size: 2.2rem;
+  font-size: 1.8rem;
 }
 
 .img-content a {
@@ -290,8 +305,18 @@ body {
 
 .img-container:hover .img-content {
   opacity: 1;
-  top: 40%;
+  top: 70%;
 }
+
+
+.credit-text{
+    display:block;
+    text-align:center;
+    margin:0 auto;
+}
+
+
+
 
 /* .........../Food Menu/............ */
 
@@ -489,6 +514,7 @@ body {
   margin-top: 2rem;
   margin-bottom: 1rem;
   margin-left: 2rem;
+  display: flex;
 }
 
 #map {
@@ -507,6 +533,7 @@ body {
   margin-top: 2rem;
   margin-bottom: 1rem;
   margin-left: 2rem;
+  display: flex;
 }
 
 #location {
@@ -553,12 +580,14 @@ body {
 }
 
 .address-item {
-  margin: 0 1rem;
+  margin: 10 0.5rem;
+  font-size: 180%;
 }
 
 #footer {
   text-align: center;
   background: #48825B;
+  position: relative;
 }
 
 .contact-list {
@@ -590,8 +619,9 @@ body {
 
   .navbar-container {
     display: block;
-    position: relative;
     height: 64px;
+    justify-content: center;
+    align-items: center;
   }
 
   .navbar-container input[type="checkbox"] {
@@ -662,8 +692,10 @@ body {
 
   .logo {
     position: absolute;
+    justify-content: center;
+    align-items: center;
     top: 5px;
-    right: 15px;
+    right: 7px;
     font-size: 2rem;
   }
 
@@ -741,18 +773,47 @@ body {
   }
 
   .logo {
-    position: absolute;
-    top: 06px;
-    right: 15px;
-    font-size: 3rem;
+    horizontal-align: center;
+    height: auto;
+    width: 58%;
+    vertical-align: top;
   }
+
+  @media screen and (max-width: 480px) {
+  .logo img {
+    width: 60px;
+  }
+}
+
+@media screen and (max-width: 680px;) {
+.logo img {
+  width: 120px;
+  }
+}
+
+@media screen and (max-width: 1080px;) {
+.logo img {
+  width: 100%;
+  }
+}
+
+
+
+
 
   .navbar .menu-items li {
     margin-bottom: 2.5rem;
     font-size: 1.8rem;
     font-weight: 500;
   }
-}
+
+  .map iframe {
+    max-width: 90%;
+  }
+
+  .footer {
+    max-width: 90%;
+  }
 
 @media (min-width: 769px) and (max-width: 1200px) {
   .img-container h3 {
